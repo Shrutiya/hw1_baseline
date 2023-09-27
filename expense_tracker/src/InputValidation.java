@@ -33,11 +33,21 @@ public class InputValidation {
         }
     }
 
+    /**
+     * Validating category - Not empty and is restricted to valid categories
+     * If not valid, add to the list of validation errors
+     */
     private void validateCategory() {
-
+        if (category == null || category.trim().isEmpty()) {
+            validationErrors.add(ERROR_MESSAGE_CATEGORY_EMPTY);
+        } else if (!Arrays.asList(VALID_CATEGORIES).contains(category)) {
+            validationErrors.add(ERROR_MESSAGE_CATEGORY_INVALID);
+        }
     }
 
     public List<String> validateInput() {
+        validateAmount();
+        validateCategory();
         return validationErrors;
     }
 
