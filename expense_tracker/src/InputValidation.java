@@ -23,16 +23,22 @@ public class InputValidation {
         this.category = category;
     }
 
+    /**
+     * Validating amount range - 0<amount<1000
+     * If not valid, add to the list of validation errors
+     */
     private void validateAmount() {
-        
+        if (amount <= 0 || amount >= 1000) {
+            validationErrors.add(ERROR_MESSAGE_AMOUNT);
+        }
     }
 
     private void validateCategory() {
-       
+
     }
 
     public List<String> validateInput() {
-       return validationErrors;
+        return validationErrors;
     }
 
 }
