@@ -36,7 +36,7 @@ public class ExpenseTrackerView extends JFrame {
   }
 
   public String getCategoryField() {
-    return categoryField.getText();
+    return categoryField.getText().toLowerCase();
   }
 
   public void setCategoryField(JTextField categoryField) {
@@ -48,6 +48,16 @@ public class ExpenseTrackerView extends JFrame {
   }
   public DefaultTableModel getTableModel() {
     return model;
+  }
+
+  /**
+   * Pop up error box with exception information
+   * @param errorMessage - Custom error message based on the exception occurred
+   * @param titleBar
+   */
+  public void errorBox(String errorMessage, String titleBar)
+  {
+      JOptionPane.showMessageDialog(null, errorMessage, "ErrorBox: " + titleBar, JOptionPane.ERROR_MESSAGE);
   }
 
   public ExpenseTrackerView(DefaultTableModel model) {

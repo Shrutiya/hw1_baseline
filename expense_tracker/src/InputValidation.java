@@ -24,7 +24,7 @@ public class InputValidation {
     }
 
     /**
-     * Validating amount range - 0<amount<1000
+     * Validating amount range - amount greater than 0 and less than 1000
      * If not valid, add to the list of validation errors
      */
     private void validateAmount() {
